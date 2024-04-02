@@ -137,6 +137,7 @@ body{
   
   }
 .Contenedor1{
+ 
   margin: 0 auto; /* Esto mantendrá el contenedor centrado */
   padding: 0 0; /* Ajusta el margen lateral deseado */
 }
@@ -148,6 +149,8 @@ body{
     margin-left: 0;
     margin-right: 0;
     justify-content: space-between; /* Agregar esta línea */
+    background-color: aqua;
+    width: 100%;
 }
 
 /* El resto de tu CSS permanece igual */
@@ -155,6 +158,7 @@ body{
     padding: 3%;
     padding-top: 2%;
     font-size: 5px;
+    width: 25%;
 }
 
 .Cuadro1 img, .Cuadro2 img, .Cuadro3 img, .Cuadro4 img {
