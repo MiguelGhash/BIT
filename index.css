@@ -144,7 +144,7 @@ align-items: center;
 }
 
 .Titulo h1 {
-    font-size: 10px;
+    font-size: 60%;
 }
 
 .img-decorativa img {
@@ -177,7 +177,7 @@ align-items: center;
 .Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4 {
     padding: 3%;
     padding-top: 2%;
-    font-size: 5px;
+    font-size: 60%;
     width: 25%;
 }
 
