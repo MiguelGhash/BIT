@@ -114,6 +114,7 @@ body{
   z-index: 2;
 }
 @media (max-width: 1000px) {
+
   .Titulo{
     z-index: 2;
   
@@ -135,53 +136,57 @@ body{
     
   
   }
-
+.Contenedor1{
+  margin: 0 auto; /* Esto mantendrá el contenedor centrado */
+  padding: 0 0; /* Ajusta el margen lateral deseado */
+}
   .Cuadros{
     z-index: 1;
-    position: absolute;
     display: flex;
     flex-direction: row;
-    margin-top: -20vw;
-    margin-left: 26%;
-    margin-right: 20%;
-  
-  }
-  .Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4
-  {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between; /* Agregar esta línea */
+}
+
+/* El resto de tu CSS permanece igual */
+.Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4 {
     padding: 3%;
     padding-top: 2%;
     font-size: 5px;
-    
-  }
-  .Cuadro1 img, .Cuadro2 img, .Cuadro3 img, .Cuadro4 img
-  {
-   height: 24%;
-   margin: 10% 30%;
-    
-  }
-  .Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4, .Cuadro4 h4
-  {
+}
+
+.Cuadro1 img, .Cuadro2 img, .Cuadro3 img, .Cuadro4 img {
+    height: 24%;
+    margin: 10% 30%;
+}
+
+.Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4, .Cuadro4 h4 {
     font-size: 100%;
-  }
-  .Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4{
+}
+
+.Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4 {
     color: white;
-  }
-  .Cuadro1{
-    background-color: #e305019f ;
-    border-top-left-radius:0 ;
+}
+
+.Cuadro1 {
+    background-color: #e30501;
+    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-  }
-  .Cuadro2
-  {
-    background-color: #ab00009f  ;
-  }
-  
-  .Cuadro3
-  {
-    background-color: #1e1a1b9f ;
-  }
-  .Cuadro4{
-    background-color: #eaeaea9f ;
-  }
+}
+
+.Cuadro2 {
+    background-color: #ab0000;
+}
+
+.Cuadro3 {
+    background-color: #1e1a1b;
+}
+
+.Cuadro4 {
+    background-color: #eaeaea;
+}
+
 
 }
