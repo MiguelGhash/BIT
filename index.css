@@ -127,11 +127,11 @@ body{
   }
 
   .img-decorativa img{
-    height: 5%;
+    height: 7%;
     width: auto;
     position: absolute;
     z-index: 2;
-    margin: 5% 40%;
+    margin: 5% 43%;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.726));
     
   
