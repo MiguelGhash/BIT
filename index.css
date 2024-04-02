@@ -177,7 +177,7 @@ align-items: center;
 .Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4 {
     padding: 3%;
     padding-top: 2%;
-    font-size: 60%;
+    font-size: 100%;
     width: 25%;
 }
 
