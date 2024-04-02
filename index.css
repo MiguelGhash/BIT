@@ -28,7 +28,8 @@
 .Contenedor1{
 display: flex;
 flex: row;
-  align-items: center;
+align-items: center;
+ 
 
 }
 
@@ -41,7 +42,7 @@ flex: row;
   
 }
 .Titulo h1{
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
@@ -50,19 +51,21 @@ flex: row;
   width: auto;
   position: absolute;
   z-index: 2;
-  margin: -300px 44%;
+  margin: -23% 44%;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.726));
+  align-self: flex-start;
+  display: flex;
   
 
 }
 
 .Cuadros{
   z-index: 1;
-  position: absolute;
   display: flex;
   flex-direction: row;
-  margin-top: -200px;
+  margin-top: -170px;
   margin-left: 400px;
+  height: 150px;
 
 }
 .Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4
@@ -108,20 +111,29 @@ flex: row;
 
 .Emprendimiento{
   background-color: black;
-  position: absolute;
-
   color: white;
 
 }
-@media (max-width: 1000px) {
+
+@media (min-width: 801px)
+{
+  .Emprendimiento{
+   position: absolute;
+  }
+  .Cuadros{
+    position: absolute;
+  }
+}
+@media (max-width: 800px) {
 
 
   
   .Emprendimiento {
     background-color: black;
-  position: absolute;
-margin-top: 110px;
-  color: white;
+    margin-top: 0px;
+    color: white;
+    position: relative;
+
 
   }
 /* El resto de tu CSS permanece igual */
@@ -145,6 +157,7 @@ margin-top: 110px;
 }
 
 .Contenedor1 {
+  position: inherit;
   display: flex;
     margin: 0 auto; /* Esto mantendrá el contenedor centrado */
     padding: 0 0; /* Ajusta el margen lateral deseado */
@@ -152,8 +165,8 @@ margin-top: 110px;
 }
 
 .Cuadros {
-
-  position: absolute;
+    position: relative;
+    z-index: 2;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
