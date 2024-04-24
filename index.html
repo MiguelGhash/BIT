@@ -14,6 +14,8 @@
   </head>
   
   <body>
+        <!-- Navegador -->
+<div class = "Navegador">
     <button id="menu-button" class="menu-btn">
       <div class="line"></div>
       <div class="line"></div>
@@ -23,7 +25,7 @@
       <a href="#" onclick="mostrarPagina('Page-1')">Inicio</a>
       <a href="#" onclick="mostrarPagina('Page-2')">Nuestro equipo</a>
 
-          <a href="#" id="redes-sociales-btn">Redes sociales</a>
+          <a id="redes-sociales-btn">Redes sociales</a>
           <div id="social-media-submenu" class="social-media-submenu">
               <a href="#">Opción 1</a>
               <a href="#">Opción 2</a>
@@ -34,8 +36,30 @@
       <a href="#" id="contacto-btn" onclick="mostrarAlerta()">Contacto</a>
 
   </nav>
-  
-  
+</div>
+      <!-- Movil -->
+      <div class = "Movil">
+        <button id="Movil-menu-button" class="Movil-menu-btn">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </button>
+      <nav id="Movil-menu" class="Movil-menu">
+          <a href="#" onclick="mostrarPagina('Page-1')">Inicio</a>
+          <a href="#" onclick="mostrarPagina('Page-2')">Nuestro equipo</a>
+    
+              <a id="Movil-redes-sociales-btn">Redes sociales</a>
+              <div id="Movil-social-media-submenu" class="Movil-social-media-submenu">
+                  <a href="#">Opción 1</a>
+                  <a href="#">Opción 2</a>
+                  <a href="#">Opción 3</a>
+    
+    
+          </div>
+          <a href="#" id="contacto-btn" onclick="mostrarAlerta()">Contacto</a>
+    
+      </nav>
+    </div>
   
 <div class = "Page-1"> <!---Pagina 1-->
    <!---Menú-->   
@@ -161,5 +185,8 @@
 
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="SCRIPT/Mobile.js"></script>
  <script src="SCRIPT/Script-1.js"></script>
+
+
 </html>

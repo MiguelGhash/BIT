@@ -51,42 +51,53 @@ menuButton.addEventListener("click", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('redes-sociales-btn').addEventListener('click', function(event) {
-        console.log("Botón de redes sociales clickeado");
-        
-        const desplegable = document.getElementById("social-media-submenu");
-        
-        if (desplegable.style.height === "0px" || !desplegable.style.height) {
-            desplegable.style.height = desplegable.scrollHeight + "px"; // Desplegar el sub-menú
-        } else {
-            desplegable.style.height = "0"; // Contraer el sub-menú
-        }
-    });
-});
-
-
+/*Sub-menú versión navegador de escritorio*/
 var redesSocialesBtn = document.getElementById("redes-sociales-btn");
 var socialMediaSubmenu = document.getElementById("social-media-submenu");
 
 redesSocialesBtn.addEventListener("click", function(event) {
-  // Obtener la posición del botón de redes sociales
-  var botonRect = event.target.getBoundingClientRect();
+    // Obtener la posición del botón de redes sociales
+    var botonRect = redesSocialesBtn.getBoundingClientRect();
 
-  // Calcular la posición de desplazamiento vertical de la página
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Establecer la posición del submenú en relación con la ventana del navegador
+    socialMediaSubmenu.style.top = botonRect.bottom + "px";
+    socialMediaSubmenu.style.left = botonRect.left + "px";
 
-  // Establecer la posición del submenú
-  socialMediaSubmenu.style.top = (botonRect.bottom + scrollTop) + "px";
-  socialMediaSubmenu.style.left = botonRect.left + "px";
-  
-  // Mostrar el submenú
-  socialMediaSubmenu.classList.toggle("active");
+    // Mostrar u ocultar el submenú
+    socialMediaSubmenu.classList.toggle("active");
+
+    // Detener la propagación del evento para evitar que active el event listener del documento
+    event.stopPropagation();
 });
+
+
+
+// Función para ocultar el submenú cuando se hace clic fuera de él
+document.addEventListener("click", function(event) {
+    var target = event.target;
+    // Verificar si el clic ocurrió fuera del botón de redes sociales y su submenú
+    if (target.id !== "redes-sociales-btn" && !socialMediaSubmenu.contains(target)) {
+        // Ocultar el submenú
+        socialMediaSubmenu.classList.remove("active");
+    }
+});
+
+// Función para ocultar el submenú cuando se hace scroll en la página
+window.addEventListener("scroll", function() {
+    // Ocultar el submenú
+    socialMediaSubmenu.classList.remove("active");
+    menu.classList.remove("active")
+    menuButton.classList.remove("active");
+});
+
+
+
 
 
 function mostrarAlerta() {
     alert("¡La página de contacto está en construcción! ¡Vuelve pronto!");
   }
+  
+
   
 

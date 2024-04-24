@@ -194,7 +194,9 @@ display: none;
 position: absolute;
 }
 /*Menú desplegable*/
-  
+  .Movil{
+    display: none;
+  }
 .menu-btn {
   position: fixed;
   z-index: 3;
@@ -316,7 +318,7 @@ transition: all 0.5s ease-in-out;
  
 
   .submenu-container {
-    position: relative;
+    position: fixed;
   }
   .social-media-submenu {
     position: fixed;
@@ -344,7 +346,11 @@ transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 800px) {
-  .menu-btn {
+  .Navegador{
+    display: none;
+  }
+
+  .Movil-menu-btn{
     position: fixed;
     z-index: 3;
     font-size: 2vw;
@@ -360,7 +366,7 @@ transition: all 0.5s ease-in-out;
     margin-top: 20px;
 }
 
-.menu-btn .line {
+.Movil-menu-btn .line {
     width: 90%;
     height: 3px;
     background-color: #e30301;
@@ -369,21 +375,21 @@ transition: all 0.5s ease-in-out;
     transition: all 0.3s ease;
 }
 
-.menu-btn:hover .line:nth-child(1),
-.menu-btn:hover .line:nth-child(3) {
+.Movil-menu-btn:hover .line:nth-child(1),
+.Movil-menu-btn:hover .line:nth-child(3) {
     width: 90%;
 }
 
-.menu-btn .line:nth-child(1),
-.menu-btn .line:nth-child(3) {
+.Movil-menu-btn .line:nth-child(1),
+.Movil-menu-btn .line:nth-child(3) {
     width: 50%;
 }
 
-.menu-btn:hover .line:nth-child(2) {
+.Movil-menu-btn:hover .line:nth-child(2) {
     width: 50%;
 }
 
-.menu {
+.Movil-menu {
     margin-top: 50px;
     position: fixed;
     width: 0;
@@ -398,7 +404,7 @@ transition: all 0.5s ease-in-out;
     text-decoration: none;
 }
 
-.menu.active {
+.Movil-menu.active {
     width: 65%;
     color: #fff;
     display: flex;
@@ -407,7 +413,7 @@ transition: all 0.5s ease-in-out;
     text-decoration: none;
 }
 
-.menu::after {
+.Movil-menu::after {
     content: "";
     position: absolute;
     bottom: -0.5vw;
@@ -418,13 +424,13 @@ transition: all 0.5s ease-in-out;
     margin-top: 4vw;
 }
 
-.menu a {
+.Movil-menu a {
     padding: 10%;
     width: 100%;
     text-decoration: none;
 }
 
-.menu a:hover {
+.Movil-menu a:hover {
     background: #ebddddfd;
     opacity: 50%;
     color: #ffffff;
@@ -432,19 +438,19 @@ transition: all 0.5s ease-in-out;
     text-decoration: none;
 }
 
-.menu.active a:hover {
+.Movil-menu.active a:hover {
     color: #ff0000;
     opacity: 70%;
 }
 
-.menu.active a {
+.Movil-menu.active a {
     color: #ffffff;
     opacity: 300%;
     text-decoration: none;
     text-align: center;
 }
 
-.social-media-submenu {
+.Movil-social-media-submenu {
   height: 0;
   overflow: hidden;
   transition: height 0.5s ease;
@@ -455,7 +461,7 @@ transition: all 0.5s ease-in-out;
   background-color: var(--grisOpaco);
 }
 
-.social-media-submenu.expanded {
+.Movil-social-media-submenu.expanded {
   height: auto; /* Establecer la altura a 'auto' para desplegar completamente el sub-menú */
 }
 
