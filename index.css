@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/*Colores*/
+:root {
+  /*Principales*/
+--Black: #000000;
+--CarmesiRed: #e30301 ;
+--opacoRed:#ab0000;
+--grisClaro:#746b6d;
+--grisOpaco:#1e1a1b;
+--blancoOcre:#eaeaea ;
+/*Transparentes*/
+--transparentBlack: #000000c5;
+--transparentCarmesi: #e30301c5 ;
+--transparentOpacoRed:#ab0000c5;
+--transparentGrisClaro:#746b6dc5;
+--transparentGrisOpaco:#1e1a1bc5;
+--transparentBlancoOcre:#eaeaeac5 ;
+/*Vidrio*/
+--vidrio:#746b6dcb;
+}
 
 /*Primer parte: Bienvenida*/
 .carousel-inner{
@@ -6,37 +25,28 @@
   height: 50vw;
 }
 .carousel-inner::after{
+  position: absolute;
+  z-index: 1;
   content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background:rgba(131, 127, 126, 0.678);
-    position: fixed; /* Establece la posición fija */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Asegura que cubra completamente el contenido */
-    backdrop-filter: blur(3px); /* Ajusta la cantidad de desenfoque que desees */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:var(--vidrio);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Asegura que cubra completamente el contenido */
+  backdrop-filter: blur(3px); /* Ajusta la cantidad de desenfoque que desees */
 }
-
-
-
 .Contenedor1{
 display: flex;
-flex: row;
+flex: column;
 align-items: center;
- 
-
 }
-
-
 .Titulo{
   z-index: 2;
-
   position: absolute;
   margin: 300px 200px ;
   
@@ -44,8 +54,6 @@ align-items: center;
 .Titulo h1{
   font-size: 20px;
 }
-
-
 .img-decorativa img{
   height: 50px;
   width: auto;
@@ -55,162 +63,456 @@ align-items: center;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.726));
   align-self: flex-start;
   display: flex;
-  
-
 }
-
 .Cuadros{
   z-index: 1;
   display: flex;
   flex-direction: row;
   margin-top: -170px;
   margin-left: 400px;
-  height: 150px;
-
+  height: 170px;
 }
 .Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4
 {
   padding: 6%;
   padding-top: 2%;
   font-size: 5px;
-  
 }
 .Cuadro1 img, .Cuadro2 img, .Cuadro3 img, .Cuadro4 img
 {
  height: 40px;
- margin: 15px 30%;
-  
+ margin: 10px 30%;
 }
 .Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4, .Cuadro4 h4
 {
-  font-size: 15px;
+  font-size: 12px;
 }
 .Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4{
   color: white;
 }
 .Cuadro1{
-  background-color: #e305019f ;
+  background-color: var(--transparentCarmesi);
   border-top-left-radius: 50px;
 
 }
 .Cuadro2
 {
-  background-color: #ab00009f  ;
+  background-color:var(--transparentOpacoRed)  ;
 }
 
 .Cuadro3
 {
-  background-color: #1e1a1b9f ;
+  background-color: var(--transparentGrisOpaco) ;
 }
 .Cuadro4{
-  background-color: #eaeaea9f ;
+  background-color: var(--transparentBlancoOcre) ;
 }
 .carousel-indicators{
   z-index: 2;
 }
-
+/*Seccion Emprendimiento*/
 .Emprendimiento{
   background-color: black;
   color: white;
+  padding: 10px;
+  width: 100%;
+}
+.Emprendimiento h1{
+  border-left: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--blancoOcre);
+  padding: 30px;
+  margin-top: -10px;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-right: 45px;
 
 }
+.subEmprendimiento{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+
+}
+.Columna-1, .Columna-2{
+  width: 500px;
+  margin: 30px 20px;
+  padding: 50px;
+  flex-grow: 1;
+  flex-basis: 200;
+
+
+}
+
+.Columna-2{
+  display: flex;
+  flex-direction: column;
+
+}
+.subColumna2-1{
+  border-bottom: 1px solid var(--blancoOcre);
+  margin-left: -6.5%;
+  width: 110%;
+  padding: 10%;
+  border-left: 1px solid var(--blancoOcre);
+  margin-top: -30px;
+
+}
+.subColumna2-2{
+padding-top: 5%;
+
+}
+.Columna-1{
+  border-left: 1px solid var(--blancoOcre);
+  border-bottom: 1px solid var(--blancoOcre);
+  
+
+
+}
+.Page-2
+{
+z-index: 1;
+color: white;
+background-color: #ab0000;
+display: none;
+}
+/*Menú*/
+
 
 @media (min-width: 801px)
 {
-  .Emprendimiento{
-   position: absolute;
-  }
-  .Cuadros{
+
+.Emprendimiento
+{
     position: absolute;
-  }
 }
-@media (max-width: 800px) {
+.Cuadros
+{
+    position: absolute;
+}
+.Page-2
+{
+position: absolute;
+}
+/*Menú desplegable*/
+  
+.menu-btn {
+  position: fixed;
+  z-index: 3;
+  font-size: 2vw;
+  color: #e30301;
+  background-color: #0000001f;;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  margin-left: 10%;
+  border-radius: 1vw;
+  padding: 0.5vw;
+  margin-top: 35px;
+  }
+  
+.menu {
+  margin-top: 30px;
+  position: fixed;
+  width: 0;
+  overflow: hidden;
+  background:var(--CarmesiRed);
+  box-shadow: 0 0 10px rgb(0, 0, 0), 0, .3;
+  transition: width 0.5s ease-in-out;
+  border-radius: 15px;
+  height: 5vw;
+  font-size: 0;
+  z-index: 10;
+  left: 15%; 
+}
+.menu.active {
+  width: 60%;
+  font-size: 1.3vw;
+  color: #fff;
+  display: flex;
+  flex: row;
+  align-items: center;
+}
+.menu::after {
+  content: "";
+  position: absolute; /* Asegura que la posición sea absoluta */
+  bottom: -0.5vw;
+  right: 7%;
+  transform: translateX(10%);
+  width: 10vw;
+  height: 90%;
+  margin-top: 4vw;
+}  
+.menu a
+{
+padding: 5%;
+display: flex;
+text-decoration: none;
+
+}
+.menu a:hover {
+background: #ebddddfd;
+opacity: 50%;
+color: #ffffff;
+transition: all 0.5s ease-in-out;
+  
+  
+  }
+  
+  .menu.active a:hover {
+  color: #ff0000;
+  opacity: 70%;
+
+  }
+  
+  .menu.active a {
+  color: #ffffff;
+  opacity: 300%;
+  }
+
 
 
   
-  .Emprendimiento {
-    background-color: black;
-    margin-top: 0px;
-    color: white;
-    position: relative;
+  .menu-btn .line {
+  width: 100%;
+  height: 0.4vw;
+  background-color: #e30301;
+  margin-bottom: 0.3vw;
+  margin-top: 0.4vw;
+  transition: all 0.3s ease;
+  }
+  
+  .menu-btn:hover .line:nth-child(1),
+  .menu-btn:hover .line:nth-child(3) {
+  width: 100%;
+  }
+  
+  .menu-btn .line:nth-child(1),
+  .menu-btn .line:nth-child(3) {
+  width: 50%;
+  }
+  
+  .menu-btn:hover .line:nth-child(2) {
+  width: 50%;
+  }
+  
+  /* Cambiar botón a x */
+  .menu-btn.active .line:nth-child(1) {
+  transform: rotate(45deg);
+  width: 100%;
+  margin-bottom: -0.9vw;
+  margin-top: 1.5vw;
+  }
+  
+  .menu-btn.active .line:nth-child(2) {
+  transform: rotate(-45deg);
+  width: 100%;
+  margin-top: 0.5vw;
+  }
+  
+  .menu-btn.active .line:nth-child(3) {
+  opacity: 0;
+  }
 
+}
+
+@media (max-width: 800px) {
+.menu-btn 
+{
+position: fixed;
+z-index: 3;
+font-size: 2vw;
+color: #e30301;
+background-color: #0000001f;;
+border: none;
+cursor: pointer;
+height: 30px;
+width: 30px;
+margin-left: 10%;
+border-radius: 1vw;
+padding: 0.5vw;
+margin-top: 20px;
+}
+.menu-btn .line {
+  width:90%;
+  height: 3px;
+  background-color: #e30301;
+  margin-bottom: 0.3vw;
+  margin-top: 0.4vw;
+  transition: all 0.3s ease;
+  }
+  
+  .menu-btn:hover .line:nth-child(1),
+  .menu-btn:hover .line:nth-child(3) {
+  width: 90%;
+  }
+  
+  .menu-btn .line:nth-child(1),
+  .menu-btn .line:nth-child(3) {
+  width: 50%;
+  }
+  
+  .menu-btn:hover .line:nth-child(2) {
+  width: 50%;
+  }
+
+  .menu {
+    margin-top: 50px;
+    position: fixed;
+    width: 0;
+    height: 50%;
+    overflow: hidden;
+    background:var(--CarmesiRed);
+    box-shadow: 0 0 10px rgb(0, 0, 0), 0, .3;
+    transition: width 0.5s ease-in-out;
+    border-radius: 15px;
+    z-index: 10;
+    left: 20%; 
+    text-decoration: none;
+  }
+  .menu.active {
+    width: 65%;
+    color: #fff;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-decoration: none;
+  }
+  .menu::after {
+    content: "";
+    position: absolute; /* Asegura que la posición sea absoluta */
+    bottom: -0.5vw;
+    right: 7%;
+    transform: translateX(10%);
+    width: 10vw;
+    height: 90%;
+    margin-top: 4vw;
+  }  
+  .menu a
+  {
+  padding: 10%;
+  width: 100%;
+  text-decoration: none;
 
   }
-/* El resto de tu CSS permanece igual */
-.Titulo {
-    z-index: 2;
-
-    margin: 20% 30%;
-}
-
-.Titulo h1 {
-    font-size: 60%;
-}
-
-.img-decorativa img {
-    height: 7%;
-    width: auto;
-    position: absolute;
-    z-index: 2;
-    margin: -20% 43%;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.726));
-}
-
-.Contenedor1 {
-  position: inherit;
-  display: flex;
-    margin: 0 auto; /* Esto mantendrá el contenedor centrado */
-    padding: 0 0; /* Ajusta el margen lateral deseado */
+  .menu a:hover {
+  background: #ebddddfd;
+  opacity: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease-in-out;
+   text-decoration: none;
     
-}
+    }
+    
+    .menu.active a:hover {
+    color: #ff0000;
+    opacity: 70%;
+  
+    }
+    
+    .menu.active a {
+    color: #ffffff;
+    opacity: 300%;
+    text-decoration: none;
+    text-align: center;
+    
+    }
 
+  
+  .menu a {
+      display: block;
+  }
+  
+  .menu a:last-of-type {
+      transition: margin-top 0.5s ease-in-out;
+  }
+  
+.Emprendimiento 
+{
+background-color: black;
+margin-top: 0px;
+color: white;
+position: relative;
+}
+.Titulo 
+{
+z-index: 2;
+margin: 20% 0%;
+}
+.Titulo h1 
+{
+font-size: 105%;
+filter: drop-shadow(0px 0px 10px rgba(199, 86, 86, 0.726));
+}
+.img-decorativa
+{
+display: flex;
+align-items: center;
+background-color: black;
+z-index: 2;
+margin: 0 40%;
+}
+.img-decorativa img {
+height: 10%;
+width: auto;
+z-index: 2;
+margin-top: 5%;
+margin-left: -7%;
+filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.726));
+   
+}
+.Contenedor1 {
+position: relative;
+display: flex;
+flex-direction: column;
+margin: 0 auto; /* Esto mantendrá el contenedor centrado */
+padding: 0 0; /* Ajusta el margen lateral deseado */   
+}
 .Cuadros {
-    position: relative;
-    z-index: 2;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: aqua;
-    width: 100%;
+position: relative;
+z-index: 2;
+margin-top: 0;
+margin-left: 0;
+margin-right: 0;
+background-color: aqua;
+width: 100%;
 }
-
 .Cuadro1, .Cuadro2, .Cuadro3, .Cuadro4 {
-    padding: 3%;
-    padding-top: 2%;
-    font-size: 60%;
-    width: 25%;
+padding: 3%;
+padding-top: 2%;
+font-size: 60%;
+width: 25%;
 }
-
 .Cuadro1 img, .Cuadro2 img, .Cuadro3 img, .Cuadro4 img {
-    height: 24%;
-    margin: 10% 30%;
+height: 24%;
+margin: 10% 30%;
 }
-
 .Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4, .Cuadro4 h4 {
-    font-size: 100%;
+font-size: 100%;
 }
-
 .Cuadro1 h4, .Cuadro2 h4, .Cuadro3 h4 {
-    color: white;
+color: white;
 }
-
 .Cuadro1 {
-    background-color: #e30501;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+background-color: #e30501;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
 }
-
 .Cuadro2 {
-    background-color: #ab0000;
+background-color: #ab0000;
 }
-
 .Cuadro3 {
-    background-color: #1e1a1b;
+background-color: #1e1a1b;
 }
-
 .Cuadro4 {
-    background-color: #eaeaea;
+background-color: #eaeaea;
 }
-
-
+.Emprendimiento h1 {
+Font-size: 100%;
+}
+.Page-2
+{
+  position: relative;
+}
 }
