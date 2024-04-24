@@ -178,7 +178,6 @@ display: none;
 }
 /*Menú*/
 
-
 @media (min-width: 801px)
 {
 
@@ -314,119 +313,153 @@ transition: all 0.5s ease-in-out;
   .menu-btn.active .line:nth-child(3) {
   opacity: 0;
   }
+ 
+
+  .submenu-container {
+    position: relative;
+  }
+  .social-media-submenu {
+    position: fixed;
+    background-color: var(--CarmesiRed);
+    transition: opacity 0.3s ease, height 0.5s ease; /* Agregar transición a la altura */
+    opacity: 0;
+    pointer-events: none;
+    height: 0; /* Establecer la altura inicial en 0 para que crezca gradualmente */
+    overflow: hidden; /* Ocultar el contenido mientras la altura es 0 */
+    width: 15%;
+    margin-top: -10px;
+    background-color: var(--grisOpaco);
+  }
+  
+  .social-media-submenu.active {
+    
+    opacity: 1;
+    pointer-events: auto;
+    height: auto; /* Establecer la altura a auto para mostrar el contenido */
+  }
+  
+  
+  
 
 }
 
 @media (max-width: 800px) {
-.menu-btn 
-{
-position: fixed;
-z-index: 3;
-font-size: 2vw;
-color: #e30301;
-background-color: #0000001f;;
-border: none;
-cursor: pointer;
-height: 30px;
-width: 30px;
-margin-left: 10%;
-border-radius: 1vw;
-padding: 0.5vw;
-margin-top: 20px;
+  .menu-btn {
+    position: fixed;
+    z-index: 3;
+    font-size: 2vw;
+    color: #e30301;
+    background-color: #0000001f;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left: 10%;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    margin-top: 20px;
 }
-.menu-btn .line {
-  width:90%;
-  height: 3px;
-  background-color: #e30301;
-  margin-bottom: 0.3vw;
-  margin-top: 0.4vw;
-  transition: all 0.3s ease;
-  }
-  
-  .menu-btn:hover .line:nth-child(1),
-  .menu-btn:hover .line:nth-child(3) {
-  width: 90%;
-  }
-  
-  .menu-btn .line:nth-child(1),
-  .menu-btn .line:nth-child(3) {
-  width: 50%;
-  }
-  
-  .menu-btn:hover .line:nth-child(2) {
-  width: 50%;
-  }
 
-  .menu {
+.menu-btn .line {
+    width: 90%;
+    height: 3px;
+    background-color: #e30301;
+    margin-bottom: 0.3vw;
+    margin-top: 0.4vw;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover .line:nth-child(1),
+.menu-btn:hover .line:nth-child(3) {
+    width: 90%;
+}
+
+.menu-btn .line:nth-child(1),
+.menu-btn .line:nth-child(3) {
+    width: 50%;
+}
+
+.menu-btn:hover .line:nth-child(2) {
+    width: 50%;
+}
+
+.menu {
     margin-top: 50px;
     position: fixed;
     width: 0;
-    height: 50%;
+    height: auto; /* Ajuste de altura automática */
     overflow: hidden;
-    background:var(--CarmesiRed);
+    background: var(--CarmesiRed);
     box-shadow: 0 0 10px rgb(0, 0, 0), 0, .3;
-    transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out; /* Transición de altura */
     border-radius: 15px;
     z-index: 10;
-    left: 20%; 
+    left: 20%;
     text-decoration: none;
-  }
-  .menu.active {
+}
+
+.menu.active {
     width: 65%;
     color: #fff;
     display: flex;
-   flex-direction: column;
-   align-items: center;
-   text-decoration: none;
-  }
-  .menu::after {
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.menu::after {
     content: "";
-    position: absolute; /* Asegura que la posición sea absoluta */
+    position: absolute;
     bottom: -0.5vw;
     right: 7%;
     transform: translateX(10%);
     width: 10vw;
     height: 90%;
     margin-top: 4vw;
-  }  
-  .menu a
-  {
-  padding: 10%;
-  width: 100%;
-  text-decoration: none;
+}
 
-  }
-  .menu a:hover {
-  background: #ebddddfd;
-  opacity: 50%;
-  color: #ffffff;
-  transition: all 0.5s ease-in-out;
-   text-decoration: none;
-    
-    }
-    
-    .menu.active a:hover {
+.menu a {
+    padding: 10%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #ebddddfd;
+    opacity: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+.menu.active a:hover {
     color: #ff0000;
     opacity: 70%;
-  
-    }
-    
-    .menu.active a {
+}
+
+.menu.active a {
     color: #ffffff;
     opacity: 300%;
     text-decoration: none;
     text-align: center;
-    
-    }
+}
 
-  
-  .menu a {
-      display: block;
-  }
-  
-  .menu a:last-of-type {
-      transition: margin-top 0.5s ease-in-out;
-  }
+.social-media-submenu {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--grisOpaco);
+}
+
+.social-media-submenu.expanded {
+  height: auto; /* Establecer la altura a 'auto' para desplegar completamente el sub-menú */
+}
+
+
   
 .Emprendimiento 
 {
